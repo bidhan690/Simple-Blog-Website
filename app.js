@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const _ = require('lodash');
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://heygarmi654:66agNK9dSQ8AU7f@cluster0.3qjkyhr.mongodb.net/blogDB', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGO_DB_URI, {useNewUrlParser: true});
 
 //Database connection
 const postSchema = {
